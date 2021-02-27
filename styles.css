@@ -1,3 +1,51 @@
+/* Buttons CSS */
+#interface {
+    padding-left: 33%;
+    padding-bottom: .5%;
+}
+
+button {
+    border: 1px;
+    border-style: solid;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: white;
+}
+
+button p {
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: .75vw;
+}
+
+button:hover {
+    background: black;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+button:hover p {
+    color: white;
+}
+
+select {
+    border-color: black;
+    border-style: solid;
+    padding: 14px;
+    font-size: .75vw;
+}
+
+select:hover {
+    background: black;
+    text-decoration: none;
+    transition: color 0.2s;
+    color: white;
+}
+
+/* --------------- */
+
+/* Table CSS */
 tr, td {
     border: 1px;
     border-style: solid;
@@ -8,3 +56,5 @@ td {
     width: 50px;
     background-color: white;
 }
+
+/* --------------- */
