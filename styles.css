@@ -1,15 +1,27 @@
 /* Buttons CSS */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
 #interface {
     padding-left: 33%;
-    padding-bottom: .5%;
+    padding-top: .5%;
+    padding-bottom: .7%;
+    background-color: white;
+    border-bottom: 1px solid;
+}
+
+hr {
+    border: none;
 }
 
 button {
-    border: 1px;
     border-style: solid;
     padding-left: 2px;
     padding-right: 2px;
     background: white;
+    border: 1px solid black;
 }
 
 button p {
@@ -46,6 +58,10 @@ select:hover {
 /* --------------- */
 
 /* Table CSS */
+#table {
+    padding-left: 10px;
+}
+
 tr, td {
     border: 1px;
     border-style: solid;

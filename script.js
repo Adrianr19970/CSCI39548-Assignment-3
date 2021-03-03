@@ -2,7 +2,6 @@ let num_Rows = 1;
 let num_Cols = 1;
 let colorSelected = "#ffffff";
 
-
 // Creates a Cell (Helper Function)
 function initial_Color(new_Cell) {
     new_Cell.classList.add("no_Color");
@@ -82,6 +81,9 @@ function removeC() {
 function selectedColor(color) {
     colorSelected = color;
     console.log(color);
+
+    let interface_bg = document.getElementById("interface");
+    interface_bg.style.backgroundColor = colorSelected;
 }
 
 // Fills all uncolored squares with a specified color
