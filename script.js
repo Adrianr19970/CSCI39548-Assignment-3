@@ -18,7 +18,7 @@ function addR() {
     {
         let new_Cell = document.createElement("td");
         initial_Color(new_Cell);
-
+		new_Cell.setAttribute('onclick', 'fillCell(this)');
         row.appendChild(new_Cell);
     }
 
@@ -35,11 +35,10 @@ function addC() {
     for (let x = 0; x < num_Rows; x++) {
         let new_Cell = document.createElement("td");
         initial_Color(new_Cell);
-
+		new_Cell.setAttribute('onclick', 'fillCell(this)');
         rows[row_Counter].appendChild(new_Cell);
         row_Counter++;
     }
-
     num_Cols++;
 }   
 
@@ -89,6 +88,11 @@ function selectedColor(color) {
 // Fills all uncolored squares with a specified color
 function fillU() {
     alert("Clicked Fill All Uncolored")
+	for(let i = 0; i<num_Rows; i++){
+		for(let j = 0; j<num_Cols; j++){
+			
+		}
+	}
 }
 
 // Sets all squares to the specified color
@@ -99,4 +103,9 @@ function fill() {
 // Clears all squares
 function clearAll() {
     alert("Clicked Clear All")
+}
+
+// Sets clicked square to selected color 
+function fillCell(cell){
+	cell.style.backgroundColor= colorSelected;
 }
