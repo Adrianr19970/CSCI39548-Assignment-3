@@ -14,6 +14,7 @@
     <button onclick="fillU()"><p>Fill All Uncolored</p></button>
     <button onclick="fill()"><p>Fill All</p></button>
     <button onclick="clearAll()"><p>Clear</p></button>
+	
 
     <select onchange="selectedColor(this.value)" id="selectedID">
         <option value="#ffffff">White</option>
@@ -22,14 +23,16 @@
         <option value="#000000">Black</option>
         <option value="#00ff00">Green</option>
     </select>
+	<input type="checkbox" id="checkBox" onclick="rememberOldGrid()"> 
+	<label for="checkbox" > Rainbow! </label>
 </div>
 
     <hr>
 
     <table id="table">
-        <tr>
-            <td onclick="fillCell(this)" class="no_Color"></td>
-        </tr>
+		<tr>
+			<td onclick="fillCell(this)" class="no_Color" id="firstCell"></td>
+		</tr>
     </table>
 
     <script src="script.js"></script>

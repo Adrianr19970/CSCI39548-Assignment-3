@@ -1,6 +1,10 @@
 let num_Rows = 1;
 let num_Cols = 1;
 let colorSelected = "#ffffff";
+let rainbowList= ["#fc0303", "#fc4e03", "#fcba03", "#fcf003", "#41fc03", "#03fc77", 
+"#03fcd3", "#039dfc", "#034afc","#4a03fc","#ba03fc","#fc03e3"];
+let checkbox=document.getElementById("checkBox");
+let globalGrid=[];
 
 // Creates a Cell (Helper Function)
 function initial_Color(new_Cell) {
@@ -9,6 +13,7 @@ function initial_Color(new_Cell) {
     return new_Cell;
 }
 
+initial_Color(firstCell);
 
 
 // Adds a row
@@ -22,10 +27,15 @@ function addR() {
         initial_Color(new_Cell);
 		new_Cell.setAttribute('onclick', 'fillCell(this)');
         row.appendChild(new_Cell);
+		
+		
     }
 
     grid.appendChild(row);
     num_Rows++;
+	
+	if(checkbox.checked)
+			rainbowify(0,num_Rows-2);
 }
 
 // Adds a column
@@ -40,6 +50,9 @@ function addC() {
 		new_Cell.setAttribute('onclick', 'fillCell(this)');
         rows[row_Counter].appendChild(new_Cell);
         row_Counter++;
+		
+		if(checkbox.checked)
+			rainbowify(num_Cols);
     }
     num_Cols++;
 }   
@@ -97,16 +110,23 @@ function fillU() {
 		else
 			cells[i].classList.add("no_Color");
 	}
+	checkbox.checked=false;
 }
 
 // Sets all squares to the specified color
 function fill() {
     alert("Clicked Fill")
+	checkBox.checked=false; //leave at end of function (for rainbow edge cases)
 }
+
+/* I'm defining the "no_Color" class to be all boxes which are colored white 
+-Dylan																	*/
+
 
 // Clears all squares
 function clearAll() {
     alert("Clicked Clear All")
+	checkBox.checked=false; //leave at end of function (for rainbow edge cases)
 }
 
 // Sets clicked square to selected color 
@@ -118,4 +138,47 @@ function fillCell(cell){
 	else{
 		cell.classList.add("no_Color");
 	}
+	checkBox.checked=false;
+}
+
+/* rainbow code */
+
+//Changes everything to rainbow if box is checked, reverts everything to original if box is unchecked
+function rainbowify(colp=0, rowp=0){	
+	var rows= document.querySelectorAll("tr");
+	if(checkBox.checked){
+		for (row=rowp; row<rows.length; row++) {
+			for (col=colp; col< rows[row].children.length; col++) {
+				rows[row].children[col].style.backgroundColor = rainbowList[(Math.max(row,col))%rainbowList.length];
+				rows[row].children[col].classList.remove("no_Color");
+			}
+		}
+	}
+	else{
+		for(i=0; i<rows.length; i++) {
+			for (j=0; j< rows[i].children.length; j++) {
+				if(i<globalGrid.length && j<globalGrid[i].length)
+					rows[i].children[j].style.backgroundColor=globalGrid[i][j];
+				else
+					rows[i].children[j].style.backgroundColor="rgb(255,255,255)";
+				if(rows[i].children[j].style.backgroundColor=="rgb(255, 255, 255)")
+					rows[i].children[j].classList.add("no_Color");
+			}
+		}
+	}
+}
+
+//keeps a copy of color values of grid before grid is made rainbow
+function rememberOldGrid(){
+	if(checkBox.checked){
+		globalGrid=[];
+		rows=document.querySelectorAll("tr");
+		for(i=0; i< rows.length; i++){
+			globalGrid.push([]);
+			for(j=0; j<rows[i].children.length; j++){
+				globalGrid[i].push(rows[i].children[j].style.backgroundColor);
+			}
+		}
+	}
+	rainbowify();
 }
