@@ -9,6 +9,8 @@ function initial_Color(new_Cell) {
     return new_Cell;
 }
 
+
+
 // Adds a row
 function addR() {
     let grid = document.getElementById("table");
@@ -87,11 +89,13 @@ function selectedColor(color) {
 
 // Fills all uncolored squares with a specified color
 function fillU() {
-    alert("Clicked Fill All Uncolored")
-	for(let i = 0; i<num_Rows; i++){
-		for(let j = 0; j<num_Cols; j++){
-			
-		}
+	let cells = document.querySelectorAll(".no_Color");
+	for(let i = 0; i<cells.length; i++){
+		cells[i].style.backgroundColor=colorSelected;
+		if(cells[i].style.backgroundColor!=="rgb(255, 255, 255)")
+			cells[i].classList.remove("no_Color");
+		else
+			cells[i].classList.add("no_Color");
 	}
 }
 
@@ -108,4 +112,10 @@ function clearAll() {
 // Sets clicked square to selected color 
 function fillCell(cell){
 	cell.style.backgroundColor= colorSelected;
+	if(cell.style.backgroundColor!=="rgb(255, 255, 255)"){
+		cell.classList.remove("no_Color");
+	}
+	else{
+		cell.classList.add("no_Color");
+	}
 }
