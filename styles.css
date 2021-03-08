@@ -5,7 +5,7 @@ body {
 }
 
 #interface {
-    padding-left: 33%;
+    padding-left: 15%;
     padding-top: .5%;
     padding-bottom: .7%;
     background-color: white;
@@ -53,6 +53,39 @@ select:hover {
     text-decoration: none;
     transition: color 0.2s;
     color: white;
+}
+
+#checkBoxlabel{
+	background-color: white;
+	color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: .75vw;
+	
+}
+
+#customPalette_label{
+	background-color: white;
+	color: black;
+    font-size: .75vw;
+	width:20%;
+	float:left;
+}
+#palette{
+	width:60%;
+	font-size:.75vw;
+
+}
+
+
+#customPalette{
+	padding-left: 3px;
+	padding-right: 3px;
+	border: 1px solid;
+	width: 30%;
+	font-size: .75vw;
+	background-color:white;
+	display: inline-block;
 }
 
 /* --------------- */

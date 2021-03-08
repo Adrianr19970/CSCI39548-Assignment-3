@@ -23,8 +23,25 @@
         <option value="#000000">Black</option>
         <option value="#00ff00">Green</option>
     </select>
+	
 	<input type="checkbox" id="checkBox" onclick="rememberOldGrid()"> 
-	<label for="checkbox" > Rainbow! </label>
+	<label for="checkbox" id="checkBoxlabel" > Rainbow! </label>
+	
+	<select name= "Color Palette" onchange="selectedPalette(this.value)" id="paletteID">
+        <option value="#fc0303, #fc4e03, #fcba03, #fcf003, #41fc03, #03fc77, 
+		#03fcd3, #039dfc, #034afc,#4a03fc,#ba03fc,#fc03e3, #eb3434">Rainbow</option>
+        <option value="#f96767 ,#dddddd ,#277e62 ,#f4f4f4 ,#ec0f0f">Candy Cane</option>
+        <option value="#55af7a, #ff89c0,  #b4ba8c, #194a5e, #262a34 ,#644c8c">Dracula</option>
+        <option value="#a1ae25, #e1dc6b , #bb8918, #523637">Avocado</option>
+        <option value="#df0024, #f3c300, #00ac9f, #2e6db4 ">PlayStation</option>
+    </select>
+	
+	<div id= "customPalette">
+		<p id= "customPalette_label">Custom Palette: </p>
+		<input type="text" id="palette" name="palette" placeholder="color1, color2, color3...">
+		<button id="submitbutton"onclick="selectedPalette(palette.value)"><p>Submit</p></button>
+	</div>
+	
 </div>
 
     <hr>

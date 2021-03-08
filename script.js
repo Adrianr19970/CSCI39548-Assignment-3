@@ -1,10 +1,11 @@
 let num_Rows = 1;
 let num_Cols = 1;
 let colorSelected = "#ffffff";
-let rainbowList= ["#fc0303", "#fc4e03", "#fcba03", "#fcf003", "#41fc03", "#03fc77", 
-"#03fcd3", "#039dfc", "#034afc","#4a03fc","#ba03fc","#fc03e3"];
+let rainbowList=["#fc0303", "#fc4e03", "#fcba03", "#fcf003", "#41fc03", "#03fc77", 
+"#03fcd3", "#039dfc", "#034afc","#4a03fc","#ba03fc","#fc03e3", "#eb3434"];
 let checkbox=document.getElementById("checkBox");
 let globalGrid=[];
+checkbox.checked=false;
 
 // Creates a Cell (Helper Function)
 function initial_Color(new_Cell) {
@@ -100,6 +101,15 @@ function selectedColor(color) {
     interface_bg.style.backgroundColor = colorSelected;
 }
 
+//Passing user input to rainbowList
+function selectedPalette(palette){
+	rainbowList=palette.split(",");
+	console.log(rainbowList[0]);
+	checkbox.checked=true;
+	rainbowify();
+}
+
+
 // Fills all uncolored squares with a specified color
 function fillU() {
 	let cells = document.querySelectorAll(".no_Color");
@@ -116,7 +126,7 @@ function fillU() {
 // Sets all squares to the specified color
 function fill() {
     alert("Clicked Fill")
-	checkBox.checked=false; //leave at end of function (for rainbow edge cases)
+	checkbox.checked=false; //leave at end of function (for rainbow edge cases)
 }
 
 /* I'm defining the "no_Color" class to be all boxes which are colored white 
@@ -126,7 +136,7 @@ function fill() {
 // Clears all squares
 function clearAll() {
     alert("Clicked Clear All")
-	checkBox.checked=false; //leave at end of function (for rainbow edge cases)
+	checkbox.checked=false; //leave at end of function (for rainbow edge cases)
 }
 
 // Sets clicked square to selected color 
