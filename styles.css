@@ -5,11 +5,54 @@ body {
 }
 
 #interface {
-    padding-left: 33%;
+    padding-left: 15%;
     padding-top: .5%;
     padding-bottom: .7%;
     background-color: white;
-    border-bottom: 1px solid;
+    border-bottom: 3px solid;
+
+    animation: none;
+    color: #000;
+}
+
+@keyframes rgb {
+    from {
+        color: #ffff00;
+    }
+    8% {
+        color: #9acd32;
+    }
+    16% {
+        color: #00ff00;
+    }
+    24% {
+        color: #0d98ba;
+    }
+    32% {
+        color: #0000ff;
+    }
+    40% {
+        color: #8a2be2;
+    }
+    48% {
+        color: #7f00ff;
+    }
+    56% {
+        color: #c71585;
+    }
+    64% {
+        color: #ff0000;
+    }
+    72% {
+        color: #ff5349;
+    }
+    80% {
+        color: #ffa500;
+    }
+    88% {
+        color: #f8d568;
+    }
+    
 }
 
 hr {
