@@ -193,8 +193,6 @@ function rememberOldGrid(){
 	rainbowify();
 }
 
-}
-
 function rgb() {
 	let interface_bg = document.getElementById("interface");
 
