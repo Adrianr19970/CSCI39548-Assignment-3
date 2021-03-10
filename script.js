@@ -100,3 +100,16 @@ function fill() {
 function clearAll() {
     alert("Clicked Clear All")
 }
+
+function rgb() {
+	let interface_bg = document.getElementById("interface");
+
+	if(checkBox.checked == true) {
+		interface_bg.style.color = "#ffff00";
+		interface_bg.style.animation = "rgb 10s linear 0s infinite";
+	}
+	else {
+		interface_bg.style.color = "#000"
+		interface_bg.style.animation = "none";
+	}
+}
