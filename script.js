@@ -148,7 +148,7 @@ function fill() //This function traverses all the rows and columns and change ea
 -Dylan																	*/
 
 
-// Clears all squares - Anyeli 
+// This function clears all cells of color - Anyeli 
 function clearAll() 
 {
 	//alert("Clicked Clear All")
