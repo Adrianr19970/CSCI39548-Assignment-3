@@ -7,7 +7,7 @@ let checkbox=document.getElementById("checkBox");
 let globalGrid=[];
 checkbox.checked=false;
 
-// Creates a Cell (Helper Function)
+// Sets inital color of a cell (Helper Function) - Adrian
 function initial_Color(new_Cell) {
     new_Cell.classList.add("no_Color");
     new_Cell.style.backgroundColor = "#ffffff";
@@ -219,6 +219,9 @@ function rememberOldGrid(){
 	rainbowify();
 }
 
+
+// Adds a small RGB effect when rainbow is checked in and turns off when 
+// rainbow is unchecked
 function rgb() {
 	let interface_bg = document.getElementById("interface");
 
@@ -231,9 +234,3 @@ function rgb() {
 		interface_bg.style.animation = "none";
 	}
 }
-
-
-
-//Need to do - clear all
-//Fill ALL W CURRENTLY SELECTED COLOR
-//
