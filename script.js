@@ -124,8 +124,23 @@ function fillU() {
 }
 
 // Sets all squares to the specified color
-function fill() {
-    alert("Clicked Fill")
+function fill() //This function traverses all the rows and columns and change each cell to the color user wants
+{
+	//alert("Clicked Fill")
+	let rows= document.querySelectorAll("tr"); //getting all the rows
+	for(i=0; i<rows.length; i++) //go through the rows
+	{
+		for (j=0; j< rows[i].children.length; j++) //go through the columns
+		{
+			//Each individual cell -> rows[i].children[j]
+			rows[i].children[j].style.backgroundColor=colorSelected; //setting each cell to selected color
+			if(colorSelected=="rgb(255, 255, 255)") //if it's white (blank)
+			{
+				rows[i].children[j].classList.add("no_Color") //add it to the uncolored (white) list
+			}
+			
+		}
+	}
 	checkbox.checked=false; //leave at end of function (for rainbow edge cases)
 }
 
@@ -133,9 +148,20 @@ function fill() {
 -Dylan																	*/
 
 
-// Clears all squares
-function clearAll() {
-    alert("Clicked Clear All")
+// This function clears all cells of color - Anyeli 
+function clearAll() 
+{
+	//alert("Clicked Clear All")
+	let rows= document.querySelectorAll("tr"); //getting all the rows
+	for(i=0; i<rows.length; i++) //go through the rows
+	{
+		for (j=0; j< rows[i].children.length; j++) //go through the columns
+		{
+			//Each individual cell -> rows[i].children[j]
+			rows[i].children[j].style.backgroundColor="rgb(255, 255, 255)"; //setting each cell to white
+			rows[i].children[j].classList.add("no_Color"); //adding to the no_Color class (all the white boxes are in it)
+		}
+	}
 	checkbox.checked=false; //leave at end of function (for rainbow edge cases)
 }
 
@@ -206,3 +232,8 @@ function rgb() {
 	}
 }
 
+
+
+//Need to do - clear all
+//Fill ALL W CURRENTLY SELECTED COLOR
+//
